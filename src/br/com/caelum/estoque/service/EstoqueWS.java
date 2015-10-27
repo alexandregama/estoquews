@@ -43,4 +43,9 @@ public class EstoqueWS {
 		
 		return itens;
 	}
+	
+	@WebMethod(exclude = true)
+	public Item buscaPorNome(String nome) {
+		return null;
+	}
 }
