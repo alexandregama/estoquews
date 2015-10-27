@@ -1,6 +1,6 @@
 package br.com.caelum.estoque.modelo.item;
 
-
+//@XmlRootElement Esta anotacao nao eh obrigatoria
 public class Item {
 
 	private String codigo;

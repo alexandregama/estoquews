@@ -11,6 +11,7 @@ public class PublicadorWebService {
 		String url = "http://localhost:8080/estoquews";
 		
 		Endpoint.publish(url, servico);
+		System.out.println("WebService pronto para uso!");
 	}
 	
 }
