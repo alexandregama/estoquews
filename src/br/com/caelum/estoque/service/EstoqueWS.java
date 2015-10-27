@@ -6,6 +6,7 @@ import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
 import javax.jws.WebService;
+import javax.xml.ws.ResponseWrapper;
 
 import br.com.caelum.estoque.modelo.item.Filtro;
 import br.com.caelum.estoque.modelo.item.Item;
@@ -49,6 +50,15 @@ public class EstoqueWS {
 	@WebMethod(operationName = "itensPeloCodigo")
 	public List<Item> quantidadePorCodigos(List<Filtro> filtros) {
 		List<Item> itens = new ItemDao().todosItens(filtros);
+		
+		return itens;
+	}
+	
+	@WebMethod(operationName = "itensWrapped")
+	@WebResult(name = "itemWrappedEncontrado")
+	@ResponseWrapper(localName = "itensLista")
+	public List<Item> itensWrapped() {
+		List<Item> itens = new ItemDao().todosItens();
 		
 		return itens;
 	}
